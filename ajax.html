@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                //let xhtp=new XMLHttpRequest();
+                url:'boot/data.js',
+                success: function(a,b){
+                    console.log(a,b);
+                    $('#show').append(a);
+                },
+                error: function(a,b){
+                    console.log(a,b);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="show"></p>
+</body>
+</html>
